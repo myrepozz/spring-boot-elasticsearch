@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<div class="form-group" th:fragment="form-inputs">
+	<input type="text" class="hidden" id="id" name="id" th:field="*{id}"></input>
+	<input type="text" class="hidden" id="isbn" name="isbn"
+		th:field="*{isbn}"></input> <input type="text" class="hidden"
+		id="title" name="title" th:field="*{title}"></input> <input
+		type="text" class="hidden" id="author" name="id" th:field="*{author}"></input>
+	<input type="text" class="hidden" id="price" name="price"
+		th:field="*{price}"></input>
+</div>
+
+</body>
+</html>

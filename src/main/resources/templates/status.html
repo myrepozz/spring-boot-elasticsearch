@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="utf-8" />
+<title>Status</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
+</head>
+
+<body>
+
+	<div class="container"
+		style="border: 1px solid #cecece; margin-top: 35px; width: 70%">
+
+		<nav class="navbar navbar-default" style="margin-top: 10px;">
+			<div class="container-fluid">
+				<!--  <div class="navbar-header">
+      <a class="navbar-brand" href="#">Add Book Record</a>
+    </div> -->
+
+				<div class="navbar">
+					<div class="navbar-inner">
+						<h5>
+							<span class="label"
+								th:classappend="${error} ? 'label-danger' : 'label-success'"
+								style="font-size: 16px" th:text="${error} ? 'Error' : 'Success'"></span>
+							<span>&nbsp; : &nbsp;<span th:text="${message}"></span></span>
+						</h5>
+					</div>
+				</div>
+			</div>
+		</nav>
+
+
+		<a href="/books">Book Records</a>
+
+	</div>
+</body>
+</html>

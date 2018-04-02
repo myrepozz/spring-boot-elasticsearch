@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="utf-8" />
+<title>Add Book</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
+	<script src="../static/js/util.js" th:src="@{/js/util.js}"></script>
+<style>
+input:-webkit-autofill {
+	-webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+</style>
+
+</head>
+
+<body>
+
+	<div class="container"
+		style="border: 1px solid #cecece; margin-top: 35px; width: 70%">
+
+		<nav class="navbar navbar-default" style="margin-top: 10px;">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="#">Add Book Record</a>
+				</div>
+
+				<form action="#" class="navbar-form navbar-right">
+					<input class="btn btn-default" type="button"
+						onclick="location.href='/books';" value="Cancel" />
+				</form>
+			</div>
+		</nav>
+
+		<form th:action="@{/add}" th:object="${book}" method="post" name="addForm">
+			<div class="form-group">
+				<label for="isbn">ISBN:</label> <input type="text"
+					class="form-control" id="isbn" placeholder="Enter Book ISBN"
+					name="isbn" autocomplete="off" th:field="*{isbn}"></input>
+			</div>
+			<div class="form-group">
+				<label for="title">Title:</label> <input autocomplete="off"
+					type="text" class="form-control" id="title"
+					placeholder="Enter Book title" name="title" th:field="*{title}"></input>
+			</div>
+			<div class="form-group">
+				<label for="author">Author:</label> <input autocomplete="off"
+					type="text" class="form-control" id="author"
+					placeholder="Enter Book Author" name="author" th:field="*{author}"></input>
+			</div>
+			<div class="form-group">
+				<label for="price">Price:</label> <input autocomplete="off"
+					type="text" class="form-control" id="price"
+					placeholder="Enter Book Price" name="price" th:field="*{price}"></input>
+			</div>
+			<button type="submit" class="btn btn-default"
+				style="margin-bottom: 5px" onclick="validatePrice('addForm')">Add</button>
+		</form>
+	</div>
+	
+	<script>
+	
+	</script>
+</body>
+</html>
