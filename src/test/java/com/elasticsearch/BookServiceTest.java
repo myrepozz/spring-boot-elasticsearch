@@ -46,7 +46,8 @@ public class BookServiceTest {
 		assertEquals(testBook.getAuthor(), book.getAuthor());
 		// Next time it should not add as the record already exists
 		IResultData result = bookService.addBookRecord(testBook);
-		assertEquals(result.hasError(), false);
+		delay(1000);
+		assertEquals(result.hasError(), true);
 
 		bookService.deleteAll();
 	}
